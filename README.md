@@ -146,7 +146,7 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 
 **Alexis**
 
-- GitHub: [@tu-usuario](https://github.com/AlexisAcevedo)
+- GitHub: [@AlexisAcevedo](https://github.com/AlexisAcevedo)
 
 ## 🙏 Agradecimientos
 
