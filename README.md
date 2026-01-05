@@ -24,6 +24,9 @@ Una aplicación de escritorio moderna y elegante para monitorear las cotizacione
 - ⚡ **Carga asíncrona** con indicador de progreso
 - 📱 **Diseño responsivo** y fácil de usar
 - 🔄 **Actualización automática** al iniciar la aplicación
+- 🔃 **Botón de actualización manual** con estado de carga
+- 🎯 **Prevención de duplicados** en la visualización de tarjetas
+- 💫 **Mejoras en espaciado y UI** para mejor experiencia de usuario
 
 ## 🚀 Instalación
 
@@ -133,7 +136,8 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 
 ## 📝 Ideas para Mejoras Futuras
 
-- [ ] Agregar actualización automática periódica
+- [x] ~~Agregar botón de actualización manual~~ ✅ Implementado
+- [ ] Agregar actualización automática periódica (cada X minutos)
 - [ ] Implementar gráficos históricos de cotizaciones
 - [ ] Agregar notificaciones cuando el dólar alcance cierto valor
 - [ ] Permitir al usuario seleccionar qué tipos de dólar mostrar
