@@ -13,23 +13,22 @@ class DollarCard(ft.Card):
             content=ft.Column(
                 [
                     # Título
-                    ft.Text(value=nombre, size=20, weight=ft.FontWeight.BOLD, color="blue200"),
+                    ft.Text(value=nombre, size=20, weight=ft.FontWeight.BOLD, color=ft.Colors.BLUE_200),
                     
-                    ft.Divider(color="grey600"),
+                    ft.Divider(color=ft.Colors.GREY_600),
                     
                     # Fila con Compra y Venta
                     ft.Row(
                         [
                             ft.Column([
-                                ft.Text("Compra", size=14, color="white"),
-                                ft.Text(lbl_compra, size=20, weight=ft.FontWeight.BOLD, color="white")
+                                ft.Text("Compra", size=14, color=ft.Colors.WHITE),
+                                ft.Text(lbl_compra, size=20, weight=ft.FontWeight.BOLD, color=ft.Colors.WHITE)
                             ]),
                             
-                            #ft.Text("->", size=24, color="white"),
                             ft.Icon(ft.Icons.ARROW_RIGHT_ALT),    
                             ft.Column([
-                                ft.Text("Venta", size=14, color="white"),
-                                ft.Text(lbl_venta, size=20, weight=ft.FontWeight.BOLD, color="green400")
+                                ft.Text("Venta", size=14, color=ft.Colors.WHITE),
+                                ft.Text(lbl_venta, size=20, weight=ft.FontWeight.BOLD, color=ft.Colors.GREEN_400)
                             ]),
                         ],
                         alignment=ft.MainAxisAlignment.SPACE_BETWEEN
@@ -38,5 +37,5 @@ class DollarCard(ft.Card):
             ),
             padding=20,
             border_radius=10,
-            bgcolor="grey800",
+            bgcolor=ft.Colors.GREY_800,
         )
