@@ -65,7 +65,13 @@ source venv/bin/activate
 4. **Instalar las dependencias**
 
 ```bash
-pip install flet httpx
+pip install flet httpx pytz
+```
+
+O instalar desde el archivo de requisitos:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## 🎮 Uso
@@ -101,6 +107,7 @@ CotizadorDolar/
 - **[Python](https://www.python.org/)**: Lenguaje de programación principal
 - **[Flet](https://flet.dev/)**: Framework para crear aplicaciones multiplataforma con Python
 - **[httpx](https://www.python-httpx.org/)**: Cliente HTTP asíncrono para Python
+- **[pytz](https://pypi.org/project/pytz/)**: Biblioteca para manejo de zonas horarias (conversión UTC → Argentina)
 - **[DolarAPI](https://dolarapi.com/)**: API pública para obtener cotizaciones del dólar en Argentina
 
 ## 📡 API Utilizada
