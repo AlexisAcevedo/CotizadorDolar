@@ -89,18 +89,36 @@ La aplicación se abrirá en una ventana de escritorio mostrando las cotizacione
 ```
 CotizadorDolar/
 │
-├── main.py              # Punto de entrada de la aplicación
-├── dollar_service.py    # Servicio para consumir la API de cotizaciones
-├── dollar_card.py       # Componente visual para mostrar cada cotización
-├── venv/                # Entorno virtual (no incluido en el repositorio)
-└── README.md            # Este archivo
+├── main.py                      # Punto de entrada de la aplicación (7 líneas)
+├── ui/                          # Módulo de interfaz de usuario
+│   ├── __init__.py
+│   ├── app.py                   # Clase principal CotizadorApp
+│   └── components/              # Componentes visuales reutilizables
+│       ├── __init__.py
+│       └── dollar_card.py       # Tarjeta de cotización
+├── services/                    # Módulo de servicios y lógica de negocio
+│   ├── __init__.py
+│   └── dollar_service.py        # Servicio de API de cotizaciones
+├── venv/                        # Entorno virtual (no incluido en el repositorio)
+├── requirements.txt             # Dependencias del proyecto
+└── README.md                    # Este archivo
 ```
 
-### Descripción de Archivos
+### Descripción de Módulos
 
-- **`main.py`**: Archivo principal que configura la interfaz de usuario y orquesta la aplicación.
-- **`dollar_service.py`**: Clase que maneja las peticiones HTTP asíncronas a la API de DolarAPI.
-- **`dollar_card.py`**: Componente reutilizable que crea tarjetas visuales para cada tipo de dólar.
+#### 📄 `main.py`
+Punto de entrada minimalista de la aplicación. Solo inicializa y ejecuta `CotizadorApp`.
+
+#### 🎨 `ui/` - Interfaz de Usuario
+- **`app.py`**: Clase principal `CotizadorApp` que encapsula toda la lógica de la interfaz:
+  - Configuración de ventana
+  - Creación de componentes visuales
+  - Manejo de eventos (actualización de cotizaciones)
+  - Construcción del layout
+- **`components/dollar_card.py`**: Componente reutilizable que crea tarjetas visuales para cada tipo de dólar.
+
+#### ⚙️ `services/` - Servicios
+- **`dollar_service.py`**: Clase que maneja las peticiones HTTP asíncronas a la API de DolarAPI, procesamiento de datos y conversión de zonas horarias.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -141,9 +159,26 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
 5. Abre un Pull Request
 
+## 🏛️ Arquitectura
+
+El proyecto sigue el patrón **MVC (Model-View-Controller)** para una mejor separación de responsabilidades:
+
+- **Model** (`services/`): Lógica de datos y comunicación con APIs
+- **View** (`ui/`): Interfaz de usuario y componentes visuales
+- **Controller** (`main.py`): Punto de entrada que coordina Model y View
+
+### Ventajas de esta Arquitectura
+
+✅ **Separación de responsabilidades**: Cada módulo tiene un propósito claro
+✅ **Facilita el testing**: Puedes testear UI y servicios de forma independiente
+✅ **Escalabilidad**: Fácil agregar nuevos componentes o servicios
+✅ **Mantenibilidad**: Código más organizado y fácil de mantener
+✅ **Reutilización**: Componentes pueden usarse en diferentes contextos
+
 ## 📝 Ideas para Mejoras Futuras
 
 - [x] ~~Agregar botón de actualización manual~~ ✅ Implementado
+- [x] ~~Refactorizar arquitectura con separación de responsabilidades~~ ✅ Implementado
 - [ ] Agregar actualización automática periódica (cada X minutos)
 - [ ] Implementar gráficos históricos de cotizaciones
 - [ ] Agregar notificaciones cuando el dólar alcance cierto valor
@@ -151,11 +186,12 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 - [ ] Agregar conversión de montos entre pesos y dólares
 - [ ] Modo claro/oscuro configurable
 - [ ] Exportar datos a CSV o Excel
+- [ ] Agregar tests unitarios y de integración
 
 
 ## 👤 Autor
 
-**Alexis**
+**Alexis Acevedo**
 
 - GitHub: [@AlexisAcevedo](https://github.com/AlexisAcevedo)
 
@@ -164,6 +200,4 @@ Las contribuciones son bienvenidas. Si deseas mejorar este proyecto:
 - Gracias a [DolarAPI](https://dolarapi.com/) por proporcionar la API gratuita
 - Gracias al equipo de [Flet](https://flet.dev/) por el excelente framework
 
----
 
-⭐ Si este proyecto te resultó útil, considera darle una estrella en GitHub!
